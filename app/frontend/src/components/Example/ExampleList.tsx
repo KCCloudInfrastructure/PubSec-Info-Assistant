@@ -11,9 +11,9 @@ export type ExampleModel = {
 };
 
 const EXAMPLES: ExampleModel[] = [
-    { text: "Are there any radio telescopes in Australia?", value: "Are there any radio telescopes in Australia?" },
-    { text: "What are Microsoft's primary sources of revenue?", value: "What are Microsoft's primary sources of revenue?" },
-    { text: "What are some flavors of Breyers?", value: "What are some flavors of Breyers?" }
+    { text: "What mitigation for lead dust is required when demolishing a 50 year old building? ", value: "What mitigation for lead dust is required when demolishing a 50 year old building? " },
+    { text: "What is known about the mental health impacts of living next to busy roadways and highways?", value: "What is known about the mental health impacts of living next to busy roadways and highways?" },
+    { text: "What amount of proximity to trees is protective of physical and mental health?", value: "What amount of proximity to trees is protective of physical and mental health?" }
 ];
 
 interface Props {

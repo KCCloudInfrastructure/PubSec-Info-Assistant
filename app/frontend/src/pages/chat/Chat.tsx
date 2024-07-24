@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { Checkbox, Panel, DefaultButton, TextField, SpinButton, Separator, Toggle, Label } from "@fluentui/react";
 import Switch from 'react-switch';
 import { GlobeFilled, BuildingMultipleFilled, AddFilled, ChatSparkleFilled } from "@fluentui/react-icons";
+import phLogoLG from "../../assets/ph_logo_LG.svg";
 import { ITag } from '@fluentui/react/lib/Pickers';
 
 import styles from "./Chat.module.css";
@@ -353,16 +354,16 @@ const Chat = () => {
                             {activeChatMode == ChatMode.WorkOnly ? 
                                 <div>
                                     <div className={styles.chatEmptyStateHeader}> 
-                                        <BuildingMultipleFilled fontSize={"100px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work Data logo" />
+                                        <img src={phLogoLG} width="500" height="300"/>
                                         </div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>
+                                    <h1 className={styles.chatEmptyStateTitle}>Chat with Local Policy and Research data</h1>
                                 </div>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <div>
                                     <div className={styles.chatEmptyStateHeader}> 
                                         <BuildingMultipleFilled fontSize={"80px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work and Web Data logo" /><AddFilled fontSize={"50px"} primaryFill={"rgba(0, 0, 0, 0.7)"} aria-hidden="true" aria-label=""/><GlobeFilled fontSize={"80px"} primaryFill={"rgba(24, 141, 69, 1)"} aria-hidden="true" aria-label="" />
                                     </div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Chat with your work and web data</h1>
+                                    <h1 className={styles.chatEmptyStateTitle}>Chat with Local Policy and Research data</h1>
                                 </div>
                             : //else Ungrounded
                                 <div>
@@ -377,7 +378,7 @@ const Chat = () => {
                             </span>
                             {activeChatMode != ChatMode.Ungrounded &&
                                 <div>
-                                    <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
+                                    <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example question about local land use policy or environmental health research.</h2>
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
                             }
@@ -438,7 +439,7 @@ const Chat = () => {
                         )}
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. Who are Microsoft's top executives, provided as a table?)"
+                            placeholder="What mitigation for lead dust is required when demolishing a 50 year old building in the City of Seattle?"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question, defaultApproach, {}, {}, {})}
                             onAdjustClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)}
